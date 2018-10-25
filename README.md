@@ -1,4 +1,4 @@
-# Rock Paper scissors in Python!
+# Rock Paper Scissors in Python!
 ### An electronic take on a classic game!
 #### Pick your weapon and play against the computer - you will only get a vertual sting if you lose!
 
