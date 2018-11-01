@@ -1,5 +1,8 @@
 from random import randint
 
+player_lives = 5
+computer_lives = 5
+
 #available weapons
 choices = ["Rock", "Paper", "Scissors"]
 player = False
@@ -11,6 +14,10 @@ computer = choices[randint(0, 2)]
 print("computer chooses: ", computer)
 
 while player is False:
+    print("==============================")
+    print("Player Lives:", player_lives, "/5")
+    print("AI Lives:", computer_lives, "/5")
+    print("==============================")
     print("Choose your weapon!\n")
     player = input("Rock, Paper or Scissors?\n")
     print("player choose:", player)
@@ -22,22 +29,29 @@ while player is False:
     elif player == "Rock":
         if computer == "Paper":
             #computer won
-            print("You lose", computer, "covers", player)
+            player_lives -= 1
+            print("You lose", computer, "covers", player, "\n")
         else:
-            print("You win!", computer, "smashes", computer)
+            print("You win!", player, "smashes", computer, "\n")
+            computer_lives -= 1
 
     elif player == "Paper":
         if computer == "Scissors":
-            print("You lose!", computer, "cuts", player)
+            #computer won
+            player_lives -= 1
+            print("You lose!", computer, "cuts", player, "\n")
         else:
-            print("You win!", computer, "covers", computer)
+            print("You win!", player, "covers", computer, "\n")
+            computer_lives -= 1
 
     elif player == "Scissors":
         if computer == "Rock":
             #computer won
-            print("You lose!", computer, "smashes", player)
+            player_lives -= 1
+            print("You lose!", computer, "smashes", player, "\n")
         else:
-            print("You win!", computer, "cuts", computer)
+            print("You win!", player, "cuts", computer, "\n")
+            computer_lives -= 1
 
     elif player == "Quit":
         exit()
