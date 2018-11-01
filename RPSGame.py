@@ -15,7 +15,7 @@ computer = choices[randint(0, 2)]
 def winorlose(status):
     # handle win or lose based on the status
     print("*******************************")
-    print("You", status,"!", "Would you like to paly again?")
+    print("You", status, "!", "Would you like to paly again?")
     choice = input("Y / N?")
 
     if choice == "Y" or choice == "y":
@@ -37,7 +37,7 @@ def winorlose(status):
         exit()
 
 #show the computer's choices in the terminal window
-print("computer chooses: ", computer)
+#print("computer chooses: ", computer)
 
 while player is False:
     print("==============================")
@@ -79,7 +79,7 @@ while player is False:
             print("You win!", player, "cuts", computer, "\n")
             computer_lives -= 1
 
-    elif player == "Quit":
+    elif player == "Quit" or "quit":
         exit()
 
     else:
