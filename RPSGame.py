@@ -10,6 +10,32 @@ player = False
 #make the computer pick one item at random
 computer = choices[randint(0, 2)]
 
+
+# define a win or lose with a more efficient way
+def winorlose(status):
+    # handle win or lose based on the status
+    print("*******************************")
+    print("You", status,"!", "Would you like to paly again?")
+    choice = input("Y / N?")
+
+    if choice == "Y" or choice == "y":
+    # we reset the player lives
+    # change global variable
+        global player_lives
+        global computer_lives
+        global player
+        global computer
+
+        player_lives = 5
+        computer_lives = 5
+        player = False
+        computer = choice[randint(0, 2)]
+
+    if choice == "N" or choice == "N":
+        print("You quit! Bye bye!")
+        print("********************************")
+        exit()
+
 #show the computer's choices in the terminal window
 print("computer chooses: ", computer)
 
@@ -58,6 +84,13 @@ while player is False:
 
     else:
         print("Not a valid option. Check again, and check your spelling!\n")
+
+    # handle win and lose
+    if player_lives is 0:
+        winorlose("lost")
+
+    elif computer_lives is 0:
+        winorlose("won")
 
     player = False
     computer = choices[randint(0, 2)]
